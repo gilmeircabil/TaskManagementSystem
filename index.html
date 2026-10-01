@@ -3,42 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello World</title>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      color: #333;
-    }
-    .card {
-      background: white;
-      padding: 2.5rem 3.5rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-      text-align: center;
-    }
-    h1 {
-      margin: 0 0 0.5rem 0;
-      font-size: 2.5rem;
-      color: #1a1a1a;
-    }
-    p {
-      margin: 0;
-      color: #666;
-      font-size: 1.1rem;
-    }
-  </style>
+  <title>Login - Task Management System</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="card">
-    <h1>Hello, World!</h1>
-    <p>Welcome to your Task Management System.</p>
+
+  <div class="login-card">
+    <div class="login-header">
+      <h1>Welcome Back</h1>
+      <p>Please enter your details to sign in</p>
+    </div>
+
+    <!-- Alert Box for Success/Error Messages -->
+    <div id="alertBox" class="alert"></div>
+
+    <form id="loginForm">
+      <!-- Email / Username Field -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input 
+          type="email" 
+          id="email" 
+          placeholder="name@example.com" 
+          autocomplete="email"
+          required
+        >
+      </div>
+
+      <!-- Password Field with Show/Hide Toggle -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="input-wrapper">
+          <input 
+            type="password" 
+            id="password" 
+            placeholder="••••••••" 
+            autocomplete="current-password"
+            required
+          >
+          <button type="button" id="togglePassword" class="toggle-password">Show</button>
+        </div>
+      </div>
+
+      <!-- Remember Me & Forgot Password -->
+      <div class="form-options">
+        <label class="remember-me">
+          <input type="checkbox" id="rememberMe">
+          <span>Remember me</span>
+        </label>
+        <a href="#" class="forgot-password" onclick="alert('Password reset link sent to demo!'); return false;">Forgot password?</a>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" id="submitBtn" class="btn-submit">Sign In</button>
+    </form>
+
+    <!-- Footer Links -->
+    <div class="login-footer">
+      Don't have an account? <a href="#" onclick="alert('Registration page demo!'); return false;">Sign up</a>
+    </div>
+
+    <!-- Demo Credentials Helper -->
+    <div class="demo-credentials">
+      Demo account: <strong>admin@example.com</strong><br>
+      Password: <strong>password123</strong>
+    </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
